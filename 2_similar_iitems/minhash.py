@@ -180,10 +180,10 @@ class MinHash:
         """
         signatures = []
         for document in self._shingles:
-            if self.method is 'multi_hash':
+            if self.method == 'multi_hash':
                 signature = self._multi_hash(document)
                 signatures.append(signature)
-            elif self.method is 'k_smallest_values':
+            elif self.method == 'k_smallest_values':
                 signature = self._k_smallest_hash(document)
                 signatures.append(signature)
         return np.array(signatures)
